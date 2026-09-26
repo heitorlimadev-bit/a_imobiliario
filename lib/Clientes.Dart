@@ -26,7 +26,9 @@ class HomePage extends StatelessWidget {
 
       // Barra superior
       appBar: AppBar(
-        title: const Text('Clientes'),
+        title: TextField(
+          decoration: InputDecoration(hintText: 'Pesquisar clientes...'),
+        ),
       ),
 
       // Conteúdo da página
