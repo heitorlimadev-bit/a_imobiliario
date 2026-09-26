@@ -1,3 +1,7 @@
+void main() {
+  runApp(
+
+
 import 'package:flutter/material.dart';
 import 'Clientes.dart';
 
@@ -51,3 +55,9 @@ class ClientesInfo extends StatelessWidget {
       ),
     );
   }
+  
+    ),
+  
+}
+
+
