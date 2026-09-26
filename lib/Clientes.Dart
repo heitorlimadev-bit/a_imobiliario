@@ -13,10 +13,10 @@ class HomePage extends StatelessWidget {
     // Cliente fictício para teste
     final cliente = Clientes(
       nome: 'João da Silva',
-      telefone: '(11) 99999-9999',
-      capital_inicial: 10000,
-      financiamento: 50000,
       cpf: '123.456.789-00',
+      telefone: '(11) 98765-4321',
+      capital_inicial: 10000,
+      financiamento: 5000,
       status: StatusCliente.aprovado,
     );
 
