@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'clientes.dart';
+
 import 'imoveis.dart';
-=======
->>>>>>> f5deeebdb693e2eba1922e2b694342191c6c5e16
+import 'clientes.dart';
+import 'cliente_info.dart';
 
 void main() {
   runApp(
     MaterialApp(
-    //home: ClientesPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const ImoveisScreen(),
+        '//': (context) => const ClientesScreen(),
+        '///': (context) => const HomePage(),
+      },
     ),
   );
 }
