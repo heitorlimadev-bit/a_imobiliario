@@ -1,73 +1,103 @@
-void main() {
-  runApp(
-
-
 import 'package:flutter/material.dart';
-import 'Clientes.dart';
 
 class ClientesInfo extends StatelessWidget {
-   final Map<String, dynamic> cliente; // Vai receber o map de outro arquivo e mostrar a ficha
-   
-    const ClientesInfo({
-       super.key, //identificação interna do flutter
-        required this.cliente,
-      }); // quando uma pessoa criar a tela, é obrigatório entregar um cliente para ela
+  // Cliente recebido de outra tela
+  final Map<String, dynamic> cliente;
 
-  @override // substituir uma função que o flutter já espera que eu faça
-  Widget build(BuildContext context) { //montar a tela
-    return Scaffold( // estrutura básica da tela
-      backgroundColor: const Color(0xFF0B1426), // veja se pode remover essa porra depois
-      appBar: AppBar( //barrinha superior, oposto do nav
-        backgroundColor: const Color(0XFF0B1426),
+  // Construtor
+  const ClientesInfo({
+    super.key,
+    required this.cliente,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+      // Cor de fundo da tela
+      backgroundColor: const Color(0xFF0B1426),
+
+      // Barra superior
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF0B1426),
         elevation: 0,
-        title: Text(cliente['nome']),
+
+        // Título da barra
+        title: const Text(
           'Perfil do cliente',
-          style: const TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+
+        // Cor dos ícones da barra
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
       ),
-      iconTheme: const IconThemeData(color: Colors.white),
 
-      body: Padding( // chat sugeriu trocar para singlechildscroll view, mantive
-        padding: const EdgeInsets.all(20), // cria um espaçoo de 20 pixels em volta
+      // Conteúdo da tela
+      body: Padding(
+        padding: const EdgeInsets.all(20),
 
-        child: Column( // coloca elementos um embaixo do outro
-          crossAxisAlignment: CrossAxisAlignment.start, // coloca textos começando pela esquerda
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
 
+          children: [
 
-
-
-
-          children: //tudo que for dentro da coluna da fichinh [
+            // Nome do cliente
             Text(
               cliente['nome'],
               style: const TextStyle(
+                color: Colors.white,
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
               ),
             ),
 
-            const SizedBox(height: 20), // cria espaço vazio entre nome e tel
+            const SizedBox(height: 20),
 
-            Text('Telefone: ${cliente['telefone']}'),
-
-            const SizedBox(height: 10),
-
-            Text('Email: ${cliente['email']}'),
-
-            const SizedBox(height: 10),
-
-            Text('CPF: ${cliente['cpf']}'),
+            // Telefone
+            Text(
+              'Telefone: ${cliente['telefone']}',
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            ),
 
             const SizedBox(height: 10),
 
-            Text('Endereço: ${cliente['endereco']}')
+            // E-mail
+            Text(
+              'Email: ${cliente['email']}',
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            ),
+
+            const SizedBox(height: 10),
+
+            // CPF
+            Text(
+              'CPF: ${cliente['cpf']}',
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            ),
+
+            const SizedBox(height: 10),
+
+            // Endereço
+            Text(
+              'Endereço: ${cliente['endereco']}',
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ],
         ),
       ),
     );
   }
-  
-    ),
-  
 }
-
 

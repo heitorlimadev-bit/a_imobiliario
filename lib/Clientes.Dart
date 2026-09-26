@@ -1,24 +1,66 @@
-import  'package:flutter/material.dart';
-import  'models/model_clientes.dart';
-import  'models/enum_status.dart';
+import 'package:flutter/material.dart';
+
+import 'models/model_clientes.dart';
+
+import 'models/enum_status.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    // Cliente fictício para teste
+    final cliente = Clientes(
+      nome: 'João da Silva',
+      telefone: '(11) 99999-9999',
+      capital_inicial: 10000,
+      financiamento: 50000,
+      cpf: '123.456.789-00',
+      status: StatusCliente.aprovado,
+    );
+
     return Scaffold(
+
+      // Barra superior
       appBar: AppBar(
-        title: TextField(
-          decoration: InputDecoration(
-            hintText: 'Pesquisar...',
-            prefixIcon: Icon(Icons.search),
-            border: InputBorder.none,
-          ),
-        ),
+        title: const Text('Clientes'),
       ),
+
+      // Conteúdo da página
       body: Center(
-        child: Text('Conteudo da página inicial'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+
+          children: [
+
+            // Nome do cliente
+            Text(
+              cliente.nome,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            const SizedBox(height: 10),
+
+            // Telefone
+            Text(
+              cliente.telefone,
+            ),
+
+            const SizedBox(height: 20),
+
+            // Botão para testar o cliente
+            ElevatedButton(
+              onPressed: () {
+                print('Cliente selecionado: ${cliente.nome}');
+              },
+              child: const Text('Testar cliente'),
+            ),
+          ],
+        ),
       ),
     );
   }
