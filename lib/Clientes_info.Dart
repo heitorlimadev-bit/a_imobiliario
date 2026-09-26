@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'models/model_clientes.dart';
+
 class ClientesInfo extends StatelessWidget {
-  // Cliente recebido de outra tela
-  final Map<String, dynamic> cliente;
+  // Recebe um único objeto Cliente
+  final Clientes cliente;
 
   // Construtor
   const ClientesInfo({
@@ -14,7 +16,7 @@ class ClientesInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      // Cor de fundo da tela
+      // Fundo da página
       backgroundColor: const Color(0xFF0B1426),
 
       // Barra superior
@@ -22,7 +24,6 @@ class ClientesInfo extends StatelessWidget {
         backgroundColor: const Color(0xFF0B1426),
         elevation: 0,
 
-        // Título da barra
         title: const Text(
           'Perfil do cliente',
           style: TextStyle(
@@ -30,13 +31,13 @@ class ClientesInfo extends StatelessWidget {
           ),
         ),
 
-        // Cor dos ícones da barra
+        // Cor do botão voltar
         iconTheme: const IconThemeData(
           color: Colors.white,
         ),
       ),
 
-      // Conteúdo da tela
+      // Informações do cliente
       body: Padding(
         padding: const EdgeInsets.all(20),
 
@@ -45,9 +46,9 @@ class ClientesInfo extends StatelessWidget {
 
           children: [
 
-            // Nome do cliente
+            // Nome
             Text(
-              cliente['nome'],
+              cliente.nome,
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 25,
@@ -59,17 +60,7 @@ class ClientesInfo extends StatelessWidget {
 
             // Telefone
             Text(
-              'Telefone: ${cliente['telefone']}',
-              style: const TextStyle(
-                color: Colors.white,
-              ),
-            ),
-
-            const SizedBox(height: 10),
-
-            // E-mail
-            Text(
-              'Email: ${cliente['email']}',
+              'Telefone: ${cliente.telefone}',
               style: const TextStyle(
                 color: Colors.white,
               ),
@@ -79,17 +70,7 @@ class ClientesInfo extends StatelessWidget {
 
             // CPF
             Text(
-              'CPF: ${cliente['cpf']}',
-              style: const TextStyle(
-                color: Colors.white,
-              ),
-            ),
-
-            const SizedBox(height: 10),
-
-            // Endereço
-            Text(
-              'Endereço: ${cliente['endereco']}',
+              'CPF: ${cliente.cpf}',
               style: const TextStyle(
                 color: Colors.white,
               ),
@@ -100,4 +81,3 @@ class ClientesInfo extends StatelessWidget {
     );
   }
 }
-

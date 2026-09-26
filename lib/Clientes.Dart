@@ -4,6 +4,8 @@ import 'models/model_clientes.dart';
 
 import 'models/enum_status.dart';
 
+import 'Clientes_info.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -55,7 +57,12 @@ class HomePage extends StatelessWidget {
             // Botão para testar o cliente
             ElevatedButton(
               onPressed: () {
-                print('Cliente selecionado: ${cliente.nome}');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ClientesInfo(cliente: cliente),
+                  ),
+                );
               },
               child: const Text('Testar cliente'),
             ),
