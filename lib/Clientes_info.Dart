@@ -112,6 +112,7 @@ class ClientesInfo extends StatelessWidget {
       ),
     );
   }
+<<<<<<< HEAD
 
   // LINHA DE INFORMAÇÃO ESTÁTICA
   widget _Linha(String titulo, dynamic valor) {
@@ -153,3 +154,11 @@ class ClientesInfo extends StatelessWidget {
       ),
     );
   }
+=======
+  
+    ),
+  
+}
+
+
+>>>>>>> 250109a6395a9bab93fcd2dbaaa866f313a1e4f7
